@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="gyA-kT-kHw">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="mGq-ds-ybc">
+            <objects>
+                <navigationController id="gyA-kT-kHw" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tYh-yz-6pU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Cbx-XJ-BA0" kind="relationship" relationship="rootViewController" id="YrH-IV-E3q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qBr-N1-i9K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-236" y="346"/>
+        </scene>
+        <!--Quick Chat-->
+        <scene sceneID="coF-Oy-eUu">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="Cbx-XJ-BA0" customClass="PageViewController" customModule="QuickChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" title="Quick Chat" id="qYX-M0-4zv"/>
+                    <connections>
+                        <segue destination="3ac-Qt-WzN" kind="push" identifier="CameraSegue" id="igw-jw-SuN"/>
+                    </connections>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Daz-7e-5gu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="161" y="341"/>
+        </scene>
+        <!--Quick Chat-->
+        <scene sceneID="yCI-Bh-Xde">
+            <objects>
+                <viewController storyboardIdentifier="CameraViewController" id="3ac-Qt-WzN" customClass="CameraViewController" customModule="QuickChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YbW-ZO-gUc"/>
+                        <viewControllerLayoutGuide type="bottom" id="1wy-pc-er8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xvb-KT-pgb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aB3-gM-RWA" userLabel="Camera View">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njf-Zr-FPQ" userLabel="Snap Picture">
+                                <rect key="frame" x="127" y="493" width="67" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="67" id="SCm-Sq-bWg"/>
+                                    <constraint firstAttribute="height" constant="67" id="rtC-tz-Ig5"/>
+                                </constraints>
+                                <state key="normal" image="cam-photo-btn">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePhoto:" destination="3ac-Qt-WzN" eventType="touchUpInside" id="NQt-ke-P6o"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggJ-hR-7pi" userLabel="Flip Camera">
+                                <rect key="frame" x="140" y="72" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="KIy-qb-aBl"/>
+                                    <constraint firstAttribute="width" constant="40" id="cZK-6v-xrW"/>
+                                </constraints>
+                                <state key="normal" image="cam-about-face">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flipCamera:" destination="3ac-Qt-WzN" eventType="touchUpInside" id="qeb-yW-sTz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="aB3-gM-RWA" firstAttribute="leading" secondItem="xvb-KT-pgb" secondAttribute="leading" id="7HW-So-GOc"/>
+                            <constraint firstItem="aB3-gM-RWA" firstAttribute="top" secondItem="xvb-KT-pgb" secondAttribute="top" id="AAb-bz-wEU"/>
+                            <constraint firstItem="ggJ-hR-7pi" firstAttribute="leading" secondItem="xvb-KT-pgb" secondAttribute="leading" constant="140" id="ALW-uT-aEl"/>
+                            <constraint firstItem="ggJ-hR-7pi" firstAttribute="top" secondItem="YbW-ZO-gUc" secondAttribute="bottom" constant="8" id="Q6z-Se-oD4"/>
+                            <constraint firstItem="1wy-pc-er8" firstAttribute="top" secondItem="njf-Zr-FPQ" secondAttribute="bottom" constant="8" id="dtz-HR-xld"/>
+                            <constraint firstAttribute="centerX" secondItem="njf-Zr-FPQ" secondAttribute="centerX" id="e3L-Um-oeR"/>
+                            <constraint firstAttribute="trailing" secondItem="aB3-gM-RWA" secondAttribute="trailing" id="n8e-l4-6yq"/>
+                            <constraint firstAttribute="trailing" secondItem="ggJ-hR-7pi" secondAttribute="trailing" constant="140" id="rza-qR-b2G"/>
+                            <constraint firstItem="1wy-pc-er8" firstAttribute="top" secondItem="aB3-gM-RWA" secondAttribute="bottom" id="xfQ-bR-IDc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Quick Chat" id="0pO-H9-7gp"/>
+                    <connections>
+                        <outlet property="cameraView" destination="aB3-gM-RWA" id="g5Z-Mi-1qS"/>
+                        <segue destination="V35-5X-6O2" kind="push" identifier="PreviewSegue" id="nll-Wh-u8t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u4V-ji-H9T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="166" y="955"/>
+        </scene>
+        <!--Preview-->
+        <scene sceneID="IS1-G1-t31">
+            <objects>
+                <viewController id="V35-5X-6O2" customClass="PreviewViewController" customModule="QuickChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mzX-qH-m06"/>
+                        <viewControllerLayoutGuide type="bottom" id="6EL-KQ-Xj4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bfn-XY-fKZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vt2-MN-HG5">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Preview" id="ejf-Lk-agr">
+                        <barButtonItem key="rightBarButtonItem" systemItem="fastForward" id="O1E-ux-EnB">
+                            <connections>
+                                <segue destination="AZ9-yo-GAn" kind="push" id="M6A-8w-d0G"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="vt2-MN-HG5" id="Zak-SH-YAi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JLi-oD-J5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-83" y="1629"/>
+        </scene>
+        <!--Send To Table View Controller-->
+        <scene sceneID="vSI-cp-kMl">
+            <objects>
+                <tableViewController id="AZ9-yo-GAn" customClass="SendToTableViewController" customModule="QuickChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="22" sectionFooterHeight="22" id="QE5-sY-Nz3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SendToTableViewCell" rowHeight="68" id="Kli-dS-T65" customClass="SendToTableViewCell" customModule="QuickChat" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kli-dS-T65" id="g4w-vI-9m3">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="checkbox_unchecked" translatesAutoresizingMaskIntoConstraints="NO" id="fLs-ar-MWN">
+                                            <rect key="frame" x="288" y="22" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="24" id="AvT-xA-sMT"/>
+                                                <constraint firstAttribute="width" constant="24" id="YPh-Mr-ug3"/>
+                                            </constraints>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KeC-BW-7qx">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                            <state key="normal">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="checkBoxTapped:" destination="Kli-dS-T65" eventType="touchUpInside" id="82L-Qw-iCE"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="KeC-BW-7qx" secondAttribute="bottom" constant="8" id="67C-7T-mA6"/>
+                                        <constraint firstItem="fLs-ar-MWN" firstAttribute="top" secondItem="g4w-vI-9m3" secondAttribute="top" constant="20" id="KmZ-WG-G7P"/>
+                                        <constraint firstAttribute="trailing" secondItem="fLs-ar-MWN" secondAttribute="trailing" constant="8" id="RJH-uT-1vY"/>
+                                        <constraint firstAttribute="trailing" secondItem="KeC-BW-7qx" secondAttribute="trailing" id="TyJ-s0-aOe"/>
+                                        <constraint firstItem="KeC-BW-7qx" firstAttribute="top" secondItem="g4w-vI-9m3" secondAttribute="top" id="a7f-0C-CdO"/>
+                                        <constraint firstItem="KeC-BW-7qx" firstAttribute="leading" secondItem="g4w-vI-9m3" secondAttribute="leading" id="sea-e4-ZZf"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="checkBox" destination="fLs-ar-MWN" id="jcf-N4-w49"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="AZ9-yo-GAn" id="A9a-mO-lD0"/>
+                            <outlet property="delegate" destination="AZ9-yo-GAn" id="26e-Qb-N13"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="S8x-4F-a23">
+                        <barButtonItem key="rightBarButtonItem" systemItem="fastForward" id="iJx-ds-cU0">
+                            <connections>
+                                <segue destination="R6D-rT-3Qc" kind="unwind" unwindAction="sendPhoto:" id="Q3m-pC-MQj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gvv-xt-sm2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="R6D-rT-3Qc" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="355" y="1628"/>
+        </scene>
+        <!--Friends View Controller-->
+        <scene sceneID="Faj-n1-kSi">
+            <objects>
+                <tableViewController storyboardIdentifier="FriendsViewController" id="1Tw-yy-xG5" customClass="FriendsViewController" customModule="QuickChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="yaA-LR-STs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Find Friends" id="Pb9-g3-QSG">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="1Tw-yy-xG5" id="bj5-tO-76M"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PFTableViewCell" id="iyg-ah-iIB" customClass="PFTableViewCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iyg-ah-iIB" id="7bA-WD-tiy">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1Tw-yy-xG5" id="AbB-9x-lsg"/>
+                            <outlet property="delegate" destination="1Tw-yy-xG5" id="VIW-CX-lKt"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IYS-Ui-Lna" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="552" y="955"/>
+        </scene>
+        <!--Message View Controller-->
+        <scene sceneID="ArM-m1-Sww">
+            <objects>
+                <tableViewController storyboardIdentifier="MessageViewController" id="64O-T0-Lhw" customClass="MessageViewController" customModule="QuickChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="u0L-Gh-Loi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PFTableViewCell" id="bEq-cs-NQ3" customClass="PFTableViewCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bEq-cs-NQ3" id="brF-fL-eOk">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="64O-T0-Lhw" id="8yI-MX-8XR"/>
+                            <outlet property="delegate" destination="64O-T0-Lhw" id="fwc-fD-N5R"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oVq-ox-a9O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-236" y="955"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cam-about-face" width="25" height="25"/>
+        <image name="cam-photo-btn" width="67" height="67"/>
+        <image name="checkbox_unchecked" width="48" height="48"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
